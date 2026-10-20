@@ -1,157 +1,357 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gouri | Portfolio</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f0f6ff;
-    color: #243247;
-    line-height: 1.7;
-}
-
-header {
-    background: linear-gradient(135deg, #063970, #168aad);
-    color: white;
-    text-align: center;
-    padding: 65px 20px;
-}
-
-header h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 18px;
-}
-
-nav {
-    background: #052b50;
-    text-align: center;
-    padding: 15px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-section {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px #d5e3f5;
-}
-
-h2 {
-    color: #075985;
-    margin-bottom: 15px;
-}
-
-.project {
-    background: #eaf4ff;
-    padding: 20px;
-    border-left: 5px solid #168aad;
-    border-radius: 8px;
-}
-
-footer {
-    background: #052b50;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 32px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of an Electronics and Communication Engineering student interested in programming, embedded systems, IoT, and AI.">
+  <title>Gouri Hiremath | ECE Portfolio</title>
+  <style>
+    :root {
+      --navy: #102a56;
+      --blue: #2563eb;
+      --sky: #60a5fa;
+      --pale: #eff6ff;
+      --ink: #172033;
+      --muted: #64748b;
+      --white: #ffffff;
+      --line: #dbeafe;
+      --shadow: 0 16px 40px rgba(37, 99, 235, 0.10);
     }
 
-    nav a {
-        display: inline-block;
-        margin: 5px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: #f7faff;
+      color: var(--ink);
+      line-height: 1.7;
     }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
 
-    section {
-        margin: 20px 12px;
-        padding: 22px;
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
-}
-</style>
+    .nav-inner {
+      min-height: 70px; display: flex; justify-content: space-between;
+      align-items: center; gap: 18px; flex-wrap: wrap; padding: 12px 0;
+    }
+    .brand { color: var(--navy); font-size: 1.15rem; font-weight: 800; }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: .92rem; }
+    .nav-links a { color: #334155; font-weight: 600; }
+    .nav-links a:hover { color: var(--blue); }
+
+    .hero {
+      overflow: hidden; position: relative; color: white;
+      background: linear-gradient(135deg, #102a56 0%, #1d4ed8 55%, #60a5fa 100%);
+      padding: 100px 0 92px;
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero::before { width: 360px; height: 360px; right: -95px; top: -130px; }
+    .hero::after { width: 240px; height: 240px; right: 20px; top: 25px; }
+    .hero-content { position: relative; z-index: 1; max-width: 760px; animation: rise .8s ease both; }
+    .eyebrow {
+      display: inline-block; border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px; padding: 6px 13px; margin-bottom: 18px;
+      background: rgba(255,255,255,.10); font-size: .9rem;
+    }
+    h1 { font-size: clamp(2.5rem, 7vw, 4.6rem); line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 18px; }
+    .hero p { max-width: 650px; color: #eaf2ff; font-size: 1.12rem; margin-bottom: 28px; }
+    .button-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 11px 18px; border-radius: 10px; font-weight: 700;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,.14); }
+    .btn-light { background: white; color: var(--navy); }
+    .btn-outline { border: 1px solid rgba(255,255,255,.65); color: white; }
+
+    section { padding: 76px 0; }
+    .section-heading { text-align: center; margin-bottom: 34px; }
+    .section-heading .label { color: var(--blue); text-transform: uppercase; font-size: .78rem; font-weight: 800; letter-spacing: 2px; }
+    h2 { color: var(--navy); font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; margin-top: 7px; }
+    .section-heading p { color: var(--muted); margin: 10px auto 0; max-width: 650px; }
+
+    .about-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; align-items: stretch; }
+    .card {
+      background: white; border: 1px solid var(--line); border-radius: 18px;
+      padding: 26px; box-shadow: var(--shadow);
+    }
+    .card p { color: #475569; }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat {
+      background: var(--pale); border: 1px solid var(--line); border-radius: 14px;
+      padding: 18px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .stat strong { color: var(--blue); font-size: 1.7rem; line-height: 1.2; }
+    .stat span { color: #475569; font-size: .9rem; margin-top: 6px; }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .tag {
+      background: white; border: 1px solid #bfdbfe; color: #1e40af;
+      padding: 12px 17px; border-radius: 12px; font-weight: 700;
+      box-shadow: 0 5px 18px rgba(37,99,235,.06);
+      transition: transform .2s ease, background .2s ease;
+    }
+    .tag:hover { transform: translateY(-4px); background: #dbeafe; }
+
+    .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .project-card { display: flex; flex-direction: column; gap: 13px; height: 100%; }
+    .project-icon {
+      width: 52px; height: 52px; display: grid; place-items: center;
+      border-radius: 14px; background: #dbeafe; font-size: 1.7rem;
+    }
+    .project-card h3 { color: var(--navy); font-size: 1.2rem; line-height: 1.4; }
+    .project-card p { color: #475569; }
+    .project-card ul { padding-left: 20px; color: #475569; }
+    .project-card .tech { margin-top: auto; padding-top: 8px; font-size: .9rem; color: #1d4ed8; font-weight: 700; }
+
+    .education-box {
+      max-width: 760px; margin: 0 auto; border-left: 4px solid var(--blue);
+      background: white; padding: 25px 28px; border-radius: 0 16px 16px 0; box-shadow: var(--shadow);
+    }
+    .education-box h3 { color: var(--navy); }
+    .education-box p { color: #475569; margin-top: 5px; }
+
+    .achievement-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .achievement {
+      background: white; border: 1px solid var(--line); border-radius: 16px;
+      padding: 22px; text-align: center; box-shadow: var(--shadow);
+    }
+    .achievement .emoji { font-size: 1.9rem; }
+    .achievement h3 { color: var(--navy); font-size: 1.05rem; margin: 8px 0 5px; }
+    .achievement p { color: var(--muted); font-size: .95rem; }
+
+    .contact-panel {
+      max-width: 850px; margin: 0 auto; padding: 32px;
+      background: linear-gradient(135deg, #102a56, #2563eb);
+      color: white; border-radius: 22px; box-shadow: var(--shadow); text-align: center;
+    }
+    .contact-panel h2 { color: white; margin-bottom: 10px; }
+    .contact-panel p { color: #eaf2ff; margin-bottom: 22px; }
+    .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .contact-links a {
+      padding: 10px 15px; border: 1px solid rgba(255,255,255,.45);
+      border-radius: 10px; font-weight: 700; transition: background .2s ease;
+    }
+    .contact-links a:hover { background: rgba(255,255,255,.15); }
+    footer { padding: 25px 0; text-align: center; color: var(--muted); font-size: .9rem; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 760px) {
+      .nav-inner { justify-content: center; }
+      .nav-links { justify-content: center; gap: 12px; }
+      .hero { padding: 76px 0 70px; text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .button-row { justify-content: center; }
+      .about-grid, .projects { grid-template-columns: 1fr; }
+      .achievement-list { grid-template-columns: 1fr; }
+      section { padding: 58px 0; }
+      .card { padding: 22px; }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-    <h1>Hi, I'm Gouri! 👋</h1>
-    <p>Electronics & Communication Engineering Student</p>
-    <p>Aspiring Software Professional | Technology Enthusiast</p>
-</header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#project">Projects</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#career">Career Goal</a>
-</nav>
-
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am an Electronics and Communication Engineering student
-        interested in technology, innovation, and software development.
-        I enjoy learning new things and solving problems.
-    </p>
-</section>
-
-<section id="project">
-    <h2>My Project</h2>
-    <div class="project">
-        <h3>AI-Based Smart Box for Accident Prevention and Analysis</h3>
-        <p>
-            An intelligent system designed to help detect accidents
-            and support emergency response using electronic components
-            and smart technology.
-        </p>
+  <nav aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">GH<span style="color:#2563eb">.</span> Portfolio</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-</section>
+  </nav>
 
-<section id="achievements">
-    <h2>My Achievements 🏆</h2>
-    <ul>
-        <li>University Blue in Wushu</li>
-        <li>Multiple State-Level Gold Medals</li>
-        <li>National-Level Participation</li>
-    </ul>
-</section>
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow">Electronics &amp; Communication Engineering</span>
+        <h1>Hi, I'm Gouri Hiremath 👋</h1>
+        <p>An ECE engineering student interested in programming, embedded systems, IoT, and AI. I enjoy learning how technology can solve practical problems and improve everyday life.</p>
+        <div class="button-row">
+          <a class="btn btn-light" href="#projects">Explore My Projects ↓</a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/gouri-hiremath-23a725324" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<section id="career">
-    <h2>Career Goal 🎯</h2>
-    <p>
-        To build a successful career in the software and technology
-        industry while continuously learning and growing.
-    </p>
-</section>
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="label">A little about me</span>
+          <h2>About Me</h2>
+          <p>Curious about technology. Focused on learning. Motivated to build useful solutions.</p>
+        </div>
+        <div class="about-grid">
+          <article class="card reveal">
+            <p>I am an Electronics and Communication Engineering student with an interest in C programming, Python, electronics, and embedded systems. Through academic projects, I am exploring how microcontrollers, IoT, and AI tools can be used to address real-world challenges. I value teamwork, continuous learning, and problem-solving.</p>
+          </article>
+          <div class="stats reveal">
+            <div class="stat"><strong>7.5</strong><span>CGPA</span></div>
+            <div class="stat"><strong>ECE</strong><span>Engineering</span></div>
+            <div class="stat"><strong>2</strong><span>Academic projects</span></div>
+            <div class="stat"><strong>Wushu</strong><span>University Blue</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-    <p>© 2026 Gouri | Personal Portfolio</p>
-    <p>Learning Today • Building Tomorrow 💙</p>
-</footer>
+    <section id="skills" style="background:#eff6ff">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="label">What I'm learning</span>
+          <h2>Technical Skills &amp; Technologies</h2>
+          <p>Skills and tools I have worked with through learning and academic projects.</p>
+        </div>
+        <div class="tag-list reveal">
+          <span class="tag">C Programming</span>
+          <span class="tag">Python</span>
+          <span class="tag">Electronics</span>
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">Problem Solving</span>
+          <span class="tag">ESP32</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">Internet of Things (IoT)</span>
+          <span class="tag">AI Tools</span>
+        </div>
+      </div>
+    </section>
 
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="label">Learning by building</span>
+          <h2>My Projects</h2>
+          <p>Academic projects that connect engineering concepts with practical applications.</p>
+        </div>
+        <div class="projects">
+          <article class="card project-card reveal">
+            <div class="project-icon" aria-hidden="true">🚗</div>
+            <h3>AI-Based Smart Box for Accident Prevention and Analysis</h3>
+            <p><strong>Project description:</strong> A smart accident-monitoring concept designed to detect accident situations and support emergency response using electronic components and a controller.</p>
+            <p><strong>My role:</strong></p>
+            <ul>
+              <li>Contributed to the design and development of the smart accident-detection system.</li>
+              <li>Worked with electronic components and the controller for accident detection.</li>
+              <li>Contributed to accident analysis and emergency-response functionality.</li>
+            </ul>
+            <p class="tech">Technologies: ESP32, sensors, GPS, microphone, and SD card (as used in the project).</p>
+          </article>
+
+          <article class="card project-card reveal">
+            <div class="project-icon" aria-hidden="true">🌿</div>
+            <h3>Stress-Free Living in the IKS Way</h3>
+            <p><strong>Project description:</strong> An academic mini project exploring how ideas from Indian Knowledge Systems (IKS) can encourage stress management, a balanced lifestyle, and overall well-being.</p>
+            <p><strong>My role:</strong></p>
+            <ul>
+              <li>Worked on the mini project and explored the topic of stress-free living through IKS principles.</li>
+              <li>Helped present how traditional knowledge can be relevant to well-being in everyday life.</li>
+            </ul>
+            <p class="tech">Focus areas: Indian Knowledge Systems, stress management, and well-being.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" style="background:#eff6ff">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="label">Academic background</span>
+          <h2>Education</h2>
+        </div>
+        <article class="education-box reveal">
+          <h3>Bachelor of Engineering (BE) — Electronics &amp; Communication Engineering</h3>
+          <p>Dr. APJ Abdul Kalam College of Engineering and Technology</p>
+          <p><strong>CGPA:</strong> 7.5</p>
+          <p><strong>Expected graduation:</strong> 2027</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="label">Beyond the classroom</span>
+          <h2>Achievements</h2>
+          <p>Discipline, consistency, and dedication through sports.</p>
+        </div>
+        <div class="achievement-list">
+          <article class="achievement reveal">
+            <div class="emoji" aria-hidden="true">🏅</div>
+            <h3>University Blue</h3>
+            <p>Recognized as a University Blue in Wushu.</p>
+          </article>
+          <article class="achievement reveal">
+            <div class="emoji" aria-hidden="true">🥇</div>
+            <h3>State-Level Gold Medals</h3>
+            <p>Earned multiple gold medals at state-level Wushu competitions.</p>
+          </article>
+          <article class="achievement reveal">
+            <div class="emoji" aria-hidden="true">🥋</div>
+            <h3>National-Level Participation</h3>
+            <p>Participated in national-level Wushu competitions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <h2>Let's Connect</h2>
+          <p>Interested in opportunities to learn, collaborate, and grow in technology. Feel free to connect with me.</p>
+          <div class="contact-links">
+            <a href="https://github.com/GouriHiremath7891" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/gouri-hiremath-23a725324" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:gourihiremath7891@gamil.com">Email Me ✉</a>
+          </div>
+          <p style="font-size:.82rem;margin-top:18px;margin-bottom:0">GitHub repository: <a href="https://github.com/GouriHiremath7891/code" target="_blank" rel="noopener noreferrer" style="text-decoration:underline">View portfolio source code</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Gouri Hiremath · Built with HTML &amp; CSS</div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add("visible"));
+    }
+  </script>
 </body>
 </html>
