@@ -1,26 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gouri | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gouri | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f6ff;
+    color: #243247;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #063970, #168aad);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+nav {
+    background: #052b50;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #d5e3f5;
+}
+
+h2 {
+    color: #075985;
+    margin-bottom: 15px;
+}
+
+.project {
+    background: #eaf4ff;
+    padding: 20px;
+    border-left: 5px solid #168aad;
+    border-radius: 8px;
+}
+
+footer {
+    background: #052b50;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 32px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    section {
+        margin: 20px 12px;
+        padding: 22px;
+    }
+}
+</style>
 </head>
+
 <body>
+
+<header>
     <h1>Hi, I'm Gouri! 👋</h1>
-    <h2>ECE Engineering Student</h2>
+    <p>Electronics & Communication Engineering Student</p>
+    <p>Aspiring Software Professional | Technology Enthusiast</p>
+</header>
 
-    <p>I am an Electronics and Communication Engineering student
-    passionate about technology and innovation.</p>
+<nav>
+    <a href="#about">About</a>
+    <a href="#project">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#career">Career Goal</a>
+</nav>
 
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am an Electronics and Communication Engineering student
+        interested in technology, innovation, and software development.
+        I enjoy learning new things and solving problems.
+    </p>
+</section>
+
+<section id="project">
     <h2>My Project</h2>
-    <h3>AI-Based Smart Box for Accident Prevention and Analysis</h3>
-    <p>A smart system designed to help detect accidents and support
-    emergency response.</p>
+    <div class="project">
+        <h3>AI-Based Smart Box for Accident Prevention and Analysis</h3>
+        <p>
+            An intelligent system designed to help detect accidents
+            and support emergency response using electronic components
+            and smart technology.
+        </p>
+    </div>
+</section>
 
-    <h2>My Achievements</h2>
-    <p>University Blue in Wushu | State-Level Gold Medals</p>
+<section id="achievements">
+    <h2>My Achievements 🏆</h2>
+    <ul>
+        <li>University Blue in Wushu</li>
+        <li>Multiple State-Level Gold Medals</li>
+        <li>National-Level Participation</li>
+    </ul>
+</section>
 
-    <h2>My Career Goal</h2>
-    <p>To build my career in the software and technology field.</p>
+<section id="career">
+    <h2>Career Goal 🎯</h2>
+    <p>
+        To build a successful career in the software and technology
+        industry while continuously learning and growing.
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Gouri | Personal Portfolio</p>
+    <p>Learning Today • Building Tomorrow 💙</p>
+</footer>
+
 </body>
 </html>
